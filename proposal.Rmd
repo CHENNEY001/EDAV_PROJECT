@@ -12,9 +12,9 @@ In this project, we will focus on NYC, where the disease once breakout and cause
 
 ## Data availability
 
-In order to analyze the NYC citizens' attitudes towards the COVID-19 vaccination, we plan to collect data on the NYC citizens' COVID-19 vaccination status from the [NYC-health](https://www1.nyc.gov/site/doh/covid/covid-19-data-vaccines.page) website. The data how vaccinations in NYC have progressed since December 2020 and will be updated once a week on Thursdays.
+In order to analyze the NYC citizens' attitudes towards the COVID-19 vaccination, we plan to collect data on the NYC citizens' COVID-19 vaccination status from the [NYC-health](https://www1.nyc.gov/site/doh/covid/covid-19-data-vaccines.page) website. The data shows how vaccinations in NYC have progressed since December 2020 and routinely updated once a week on Thursdays.
 
-The [data](https://github.com/nychealth/COVID-vaccine-data) can be divided into two categories: `doses` and `people`
+The [data](https://github.com/nychealth/COVID-vaccine-data) can be divided into two categories: `doses` and `people`. All data is currently stored in .csv files, and we can use `read.csv()` in RStudio to import the data.
 
 ### doses/
 
@@ -40,7 +40,7 @@ There are some descriptions about the primary data and its format.
 | ADDITIONAL_CUMULATIVE | Cumulative number of additional doses administered                                                                             | Cumulative |
 | ALLDOSES_CUMULATIVE   | Cumulative number of COVID-19 vaccine doses delivered or administered (Dose 1 of 2; Dose 2 of 2; Single dose; Additional dose) | Cumulative |
 
-### People/
+### people/
 
 The `people` folder contains information on the number of NYC residents vaccinated for COVID-19 in NYC, NYS, NJ or elsewhere and reported to the CIR by NYC providers.
 
