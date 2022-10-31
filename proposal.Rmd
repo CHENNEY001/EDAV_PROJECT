@@ -44,7 +44,7 @@ There are some descriptions about the primary data and its format.
 
 The `people` folder contains information on the number of NYC residents vaccinated for COVID-19 in NYC, NYS, NJ or elsewhere and reported to the CIR by NYC providers.
 
-These data shows how many NYC residents have been vaccinated by **borough, age, race/ethnicity and sex**, and the cumulative administered doses number in NYC.
+These data shows how many NYC residents have been vaccinated by **borough, age, race/ethnicity and sex**, and the cumulative administered doses numbers in NYC.
 
 Vaccination status is classified into the following categories:
 
