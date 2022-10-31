@@ -1,9 +1,10 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAMES HERE"
+title: "COVID-19 Vaccination Status of New Yorkers"
+author: "Yuxin Lin / Yuqi Shao / Chen Da"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
 # Introduction
 
+Coronavirus disease (COVID-19) is an infectious disease and people infected with it will experience mild to moderate respiratory illness, death is rare. There is no expedient medication or treatment for recovering. Besides keeping social distances, wearing masks, etc., one of the most effective way for people not contaminating by COVID-19 is to take COVID-19 vaccine. People are encouraged to get COVID-19 vaccine by government and world health organization during the pandemic. We are now predicted to be at the end of COVID-19 pandemic due to high vaccination rate. At this time, we want to investigate on how people’s access and reaction to vaccine affect their vaccination rate. We compare based on different groups: ages, neighborhoods, religious, etc. in NYC, the most populous city in the United States. 

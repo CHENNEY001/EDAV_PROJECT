@@ -2,6 +2,8 @@ introduction
 proposal
 research-topic
 data-availability
+doses
+people
 data
 sources
 cleaning-transformation
