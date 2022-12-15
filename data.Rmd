@@ -2,9 +2,12 @@
 
 ## Sources
 
+
 ## Cleaning / transformation
 
-In file `by-residency-demo.csv` 1. the residency column has 'unknown' missing data; the race column has 'other' and 'unknown' missing data. We change 'unknown' and 'other' to NA, and delete all NA. 2. We noticed that the number of 'Native American/Alaska Native', 'Native Hawaiian/Pacific Islander', and 'Multiracial' is very small compared to other races, so we merged them into 'other' class. 3. The first column is useless in further analysis, so we delete it to get a simple and clear dataframe. Moreover, we changed all columns containing numbers to numeric type.
+
+In file by-residency-demo.csv 1. the residency column has 'unknown' missing data; the race column has 'other' and 'unknown' missing data. We change 'unknown' and 'other' to NA, and delete all NA. 2. We noticed that the number of 'Native American/Alaska Native', 'Native Hawaiian/Pacific Islander', and 'Multiracial' is very small compared to other races, so we merged them into 'other' class. 3. The first column is useless in further analysis, so we delete it to get a simple and clear dataframe. Moreover, we changed all columns containing numbers to numeric type.
+
 
 ```{r echo=FALSE}
 residency_vacc <- read.csv("./data/by-residency-demo.csv", sep = ',', header = T)
@@ -20,4 +23,6 @@ df <- data.frame(residency_vacc[,-1])
 df[4]=as.numeric(unlist(df[4]))
 ```
 
+
 ## Missing value analysis
+
