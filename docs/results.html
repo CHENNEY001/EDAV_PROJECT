@@ -91,7 +91,14 @@
 <li class="chapter" data-level="4" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>4</b> Results</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="results.html"><a href="results.html#residents-vaccinated"><i class="fa fa-check"></i><b>4.1</b> Residents Vaccinated</a></li>
-<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#people-vaccinated-and-doses-administered"><i class="fa fa-check"></i><b>4.2</b> <strong>People Vaccinated and Doses Administered</strong></a></li>
+<li class="chapter" data-level="4.2" data-path="results.html"><a href="results.html#people-vaccinated-and-doses-administered-by-age-and-borough-and-race"><i class="fa fa-check"></i><b>4.2</b> People Vaccinated and Doses Administered by age and borough and race</a></li>
+<li class="chapter" data-level="4.3" data-path="results.html"><a href="results.html#vaccination-trends"><i class="fa fa-check"></i><b>4.3</b> Vaccination Trends</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="results.html"><a href="results.html#daily-trend"><i class="fa fa-check"></i><b>4.3.1</b> daily trend</a></li>
+<li class="chapter" data-level="4.3.2" data-path="results.html"><a href="results.html#age-trend"><i class="fa fa-check"></i><b>4.3.2</b> age trend</a></li>
+<li class="chapter" data-level="4.3.3" data-path="results.html"><a href="results.html#boro-trend"><i class="fa fa-check"></i><b>4.3.3</b> boro trend</a></li>
+<li class="chapter" data-level="4.3.4" data-path="results.html"><a href="results.html#race-trend"><i class="fa fa-check"></i><b>4.3.4</b> race trend</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>5</b> Interactive component</a></li>
 <li class="chapter" data-level="6" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
@@ -126,9 +133,47 @@
 <p>The following mosaic chart show the residency and age of NYC residents who are vaccinated for COVID-19. We can see that Asians, blacks and Latinos living in New York are more open to vaccinations than those who are non-residents</p>
 <p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
-<div id="people-vaccinated-and-doses-administered" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> <strong>People Vaccinated and Doses Administered</strong><a href="results.html#people-vaccinated-and-doses-administered" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="people-vaccinated-and-doses-administered-by-age-and-borough-and-race" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> People Vaccinated and Doses Administered by age and borough and race<a href="results.html#people-vaccinated-and-doses-administered-by-age-and-borough-and-race" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this part, we wanted to explore attitudes towards vaccination in different age group and in different boroughs and in different races. The vaccination status is divided into three categories: at least 1 dose; Fully vaccinated(completed the first stage); Booster vaccinated.</p>
+<p>Firstly, we focus on all age group. The following bar chart shows that more than sixty percent of the population has been vaccinated, which means that most people in New York are open to vaccines. Among all ethnic groups, Asians have the highest vaccination rate and it is much higher than that of other races; among all boroughs in New York, the Manhattan area has the highest vaccination rate, especially Latinos and whites in this area.</p>
+<p><img src="plot/boro_hist_all_age.png" /></p>
+<p>Secondly, we divided age in to three groups: child(0-17); adult(18-64); older(65+). The following 3*3 bar chart shows the proportion of population in each age group by vaccination status. We can still see that Asians have the highest vaccination rate and it is much higher than any other group.</p>
+<p>The vaccination rate of children is much lower than that of adults and the elderly, especially for booster vaccinations. It may be because parents are worried that the booster will have hidden dangers to children’s health.</p>
+<p><img src="plot/boro_hist_child.png" /></p>
+<p><img src="plot/boro_hist_adult.png" /></p>
+<p><img src="plot/boro_hist_older.png" /></p>
+<p>Third, We fixed vaccination status and studied differences across age groups and races and boroughs.</p>
+<p>The following three chart show that adults and elderly have higher vaccination coverage than minors of the same ethnicity in the same area, and most adults, elderly,and Asian children have completed all vaccinations. But we observed that, except for booster, the vaccination rate of Asian children is even higher than that of non-Asian adults in the same area. Therefore, we can conclude that Asians trust vaccines much higher than all other races.</p>
+<p><img src="plot/boro_hist_atleast1_compare.png" /></p>
+<p><img src="plot/boro_hist_fullyvacci_compare.png" /></p>
+<p><img src="plot/boro_hist_booster_compare.png" /></p>
+</div>
+<div id="vaccination-trends" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Vaccination Trends<a href="results.html#vaccination-trends" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this part, we want to explore the total and daily number of COVID-19 vaccine administered in NYC. This includes doses given in the city to non-NYC residents. Data on people vaccinated shows the trends in people who received at least one dose, completed the primary vaccine series and who also received booster doses, by borough, age, and race.</p>
+<div id="daily-trend" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> daily trend<a href="results.html#daily-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following daily vaccinated trend chart show that there are two peaks for covid-19 vaccination. The first peak is around 2021.4, it is mainly the first stage of vaccination. The second peak is mainly the booster vaccination.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="age-trend" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> age trend<a href="results.html#age-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The vaccination trend chart of different age groups shows that the proportion of people aged 44-64 is the highest in the first stage of vaccination. Those over the age of 55 received the highest percentage of booster vaccines. We can assume that for the elderly who have received the vaccine, they prefer to protect themselves by getting a booster.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-10-3.png" width="672" /></p>
+</div>
+<div id="boro-trend" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> boro trend<a href="results.html#boro-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The vaccination trend chart of different boroughs groups shows that the order of different boroughs in the threes trend charts is basically the same. Regardless of whether it is the first stage of vaccine or booster, Manhattan and Queens have higher vaccination rates, combined with the information that Asians are much more vaccinated than other races, we can assume that the proportion of Asians in Queens and Manhattan may be higher than other areas. In contrast, Brooklyn and the Bronx may have fewer Asians.</p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-11-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-11-3.png" width="672" /></p>
+</div>
+<div id="race-trend" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> race trend<a href="results.html#race-trend" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis.
+The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated。
+<img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-12-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-12-3.png" width="672" /></p>
 
+</div>
 </div>
 </div>
             </section>
