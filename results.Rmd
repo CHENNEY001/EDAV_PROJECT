@@ -202,10 +202,12 @@ In this part, we want to explore the total and daily number of COVID-19 vaccine 
 
 The following daily vaccinated trend chart show that there are two peaks for covid-19 vaccination. The first peak is around 2021.4, it is mainly the first stage of vaccination. The second peak is mainly the booster vaccination.
 
+![](./plot/daily.png)
+
 ```{r echo=FALSE}
 trend_age <- read.csv("./data/trends-byage.csv", sep = ',', header = T)
 trend_age[trend_age=='<10'] <- 0 
-df3_age <- data_frame(trend_age)
+df3_age <- data.frame(trend_age)
 df3_age[1]=as.Date(unlist(df3_age[1]), "%m/%d/%Y")
 for (i in c(2:67)) { # change type to numeric
   df3_age[i]=as.numeric(unlist(df3_age[i]))
@@ -225,7 +227,6 @@ r3_daily <- ggplot(daily)+
   theme_bar()+
   ylab("Daily number of doses administered") + ggtitle("Daily Vaccination Trends")
 
-r3_daily
 ```
 
 ### age trend
@@ -237,7 +238,7 @@ library(reshape2)
 options(warn=-1)
 trend_age <- read.csv("./data/trends-byage.csv", sep = ',', header = T)
 trend_age[trend_age=='<10'] <- 0 
-df3_age <- data_frame(trend_age)
+df3_age <- data.frame(trend_age)
 df3_age[1]=as.Date(unlist(df3_age[1]), "%m/%d/%Y")
 for (i in c(2:67)) { # change type to numeric
   df3_age[i]=as.numeric(unlist(df3_age[i]))
@@ -354,7 +355,7 @@ The vaccination trend chart of different boroughs groups shows that the order of
 ```{r echo=FALSE}
 trend_boro <- read.csv("./data/trends-byboro.csv", sep = ',', header = T)
 trend_boro[trend_boro=='<10'] <- 0 
-df3_boro <- data_frame(trend_boro)
+df3_boro <- data.frame(trend_boro)
 df3_boro[1] = as.Date(unlist(df3_boro[1]), "%m/%d/%Y")
 for (i in c(2:37)) { # change type to numeric
   df3_boro[i]=as.numeric(unlist(df3_boro[i]))
@@ -419,11 +420,11 @@ r2_booster
 
 ### race trend
 
-ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis. The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated.
+ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis. The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated。
 
 ```{r echo=FALSE}
 trend_race <- read.csv("./data/trends-byrace.csv", sep = ',', header = T)
-df3_race <- data_frame(trend_race)
+df3_race <- data.frame(trend_race)
 df3_race[1] = as.Date(unlist(df3_race[1]), "%m/%d/%Y")
 for (i in c(2:37)) { # change type to numeric
   df3_race[i]=as.numeric(unlist(df3_race[i]))

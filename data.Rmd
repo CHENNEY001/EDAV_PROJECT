@@ -2,27 +2,90 @@
 
 ## Sources
 
+which is one of the official websites of data provided by NYC Health Department. Our data is real-time (with 3-day lag) and population-level because of the wide coverage of government institution and the suspension of immunization reporting consent. However, patients with laboratory-confirmed COVID-19 are not represented by the data. Data regarding racial and ethnic groups is collected based on long-term structural racism instead of biological or personal preference, so our data is objective rather than subjective.
+
+Our data have several levels for both doses (dependent variables) and people (independent variables). And our data are mostly cumulative, as we want to find out the overall vaccination situation at any time. As we do data cleaning and transformation for data exploratory analysis, we will mainly focus on:
+
+-   Dependent variables:
+
+1.  not take any vaccines
+2.  partially vaccine
+3.  fully vaccine
+4.  take booster
+
+-   Independent variables:
+
+1.  age
+2.  race
+3.  borough
+4.  gender
 
 ## Cleaning / transformation
 
+File `by-residency-demo.csv`
 
-In file by-residency-demo.csv 1. the residency column has 'unknown' missing data; the race column has 'other' and 'unknown' missing data. We change 'unknown' and 'other' to NA, and delete all NA. 2. We noticed that the number of 'Native American/Alaska Native', 'Native Hawaiian/Pacific Islander', and 'Multiracial' is very small compared to other races, so we merged them into 'other' class. 3. The first column is useless in further analysis, so we delete it to get a simple and clear dataframe. Moreover, we changed all columns containing numbers to numeric type
+1.  the residency column has 'unknown' missing data; the race column has 'other' and 'unknown' missing data. We change 'unknown' and 'other' to NA, and delete all NA.
 
+2.  We noticed that the number of 'Native American/Alaska Native', 'Native Hawaiian/Pacific Islander', and 'Multiracial' is very small compared to other races, so we merged them into 'other' class.
+
+3.  The first column is useless in further analysis, so we delete it to get a simple and clear dataframe. Moreover, we changed all columns containing numbers to numeric type.
 
 ```{r echo=FALSE}
-residency_vacc <- read.csv("./data/by-residency-demo.csv", sep = ',', header = T)
-residency_vacc[residency_vacc=='Unknown'] <- NA #Unknown
-residency_vacc[residency_vacc=='UNKNOWN'] <- NA #UNKNOWN
-residency_vacc[residency_vacc=='Other'] <- NA #Other
-residency_vacc[residency_vacc=='All ages'] <- NA #Other
-residency_vacc[residency_vacc=='Native American/Alaska Native'] <- 'other'
-residency_vacc[residency_vacc=='Native Hawaiian/Pacific Islander'] <- 'other'	
-residency_vacc[residency_vacc=='Multiracial'] <- 'other'
-residency_vacc=na.omit(residency_vacc)
-df <- data.frame(residency_vacc[,-1])
-df[4]=as.numeric(unlist(df[4]))
+options(warn=-1)
+residency_vacc_data <- read.csv("./data/by-residency-demo.csv", sep = ',', header = T)
+residency_vacc_data[residency_vacc_data=='Unknown'] <- NA #Unknown
+residency_vacc_data[residency_vacc_data=='UNKNOWN'] <- NA #UNKNOWN
+residency_vacc_data[residency_vacc_data=='Other'] <- NA #Other
+residency_vacc_data[residency_vacc_data=='Native American/Alaska Native'] <- 'other'
+residency_vacc_data[residency_vacc_data=='Native Hawaiian/Pacific Islander'] <- 'other'	
+residency_vacc_data[residency_vacc_data=='Multiracial'] <- 'other'
+df_data <- data.frame(residency_vacc_data[,-1])
+df_data[4]=as.numeric(unlist(df_data[4]))
 ```
 
+File `trends-byage.csv`
+
+1.  we change the date format from `str` type to `Date` type (month-date-year) for easier sort.
+2.  we changed all columns containing numbers to numeric type.
+
+```{r echo=FALSE}
+trend_age_data <- read.csv("./data/trends-byage.csv", sep = ',', header = T)
+trend_age_data[trend_age_data=='<10'] <- 0 
+df3_age_data <- data.frame(trend_age_data)
+df3_age_data[1]=as.Date(unlist(df3_age_data[1]), "%m/%d/%Y")
+for (i in c(2:67)) { # change type to numeric
+  df3_age_data[i]=as.numeric(unlist(df3_age_data[i]))
+}
+```
 
 ## Missing value analysis
 
+We firstly used `complete.case()` to identify the missing value in our dataframe.
+
+```{r}
+head(residency_vacc_data[!complete.cases(residency_vacc_data),]) # list rows containing NA
+sum(is.na(residency_vacc_data)) # determine the total numbers of missing value
+```
+
+Then we use `md.pattern()` function in the mice package to generate a table showing the pattern of missing values in the dataframe.
+
+0 indicates that there are no missing values in the variable's column, and 1 indicates that there are missing values.\
+The first row gives the number (how many rows) there are no missing values.\
+The last row gives the number of missing values for each variable.\
+The first column gives the mode of each missing value.\
+The last column gives the number of variables for which there are missing values. In this dataset, there are a total of 60 missing data.
+
+```{r echo=FALSE}
+library(mice)
+md.pattern(residency_vacc_data, rotate.names = TRUE)
+```
+
+Furthermore, we use `aggr() and matrixplot()` functions in the VIM(visualization of missing values) package to generate three different charts to show the more specific information of missing values for each variable.
+
+Light color means small value, dark color means large value, default missing value is red. We can see that missing values only appear in in two variables: AGE_GROUP and COUNT_1PLUS_CUMULATIVE.
+
+```{r echo=FALSE}
+library(VIM)
+aggr(residency_vacc_data, prop=F, numbers=T, labels = names(df), cex.axis = .6, oma = c(10,10,5,1))
+missing <- matrixplot(residency_vacc_data, labels = names(df), cex.axis = .32, oma = c(10,10,5,1))
+```

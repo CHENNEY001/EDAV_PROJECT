@@ -1,2 +1,9 @@
 # Conclusion
 
+In the whole report, we did various data exploratory analysis based on the relationship between number of doses taken and backgrounds of people in New York area. We might draw some broad and general conclusions such as new yorker residents are more likely to take vaccine than those who are not; however, there is no single determined rule that governors and vaccine companies can follow to increase the coverage of vaccination.
+
+All in all, government prioritization has the most significant influence on vaccination speed and rate. From the trend of fully vaccinated, we find that elder people get vaccination earlier than younger people; people who are willing to get vaccinated do so earlier than those who are not. Children is the last group to take vaccine. The reason for this might be parents' concern on the effectiveness of the vaccine and the time of government's mandate.
+
+We also find out that people are most willing to get vaccinated at the very beginning as there is a steep increasing rate, but gradually, the rate decreases to approximate 0, which indicates few people recently plan to take existing doses. We may conclude that despite governors' mandate and the effectiveness of vaccination, none of the groups has 100% vaccinated rate, indicating that vaccination cannot reach to any everyone no matter what.
+
+Our limitation is the limit access to data because of the privacy and security issue. We lack the most recent data, like data for second dose of booster, and we do not know what event or episode makes people to take vaccines, which needs further future exploration and analysis.

@@ -1,3 +1,19 @@
 # Interactive component
 
+Given the exploratory results above, we are interested in fully vaccination rate vs borough, rade, sex, and age by time. In this section, we create an interactive component in D3 for readers to further explore the relationship between fully vaccination rate and related variables.
 
+<iframe src="./html/byboro.html" width="780" height="300">
+
+</iframe>
+
+<iframe src="./html/byrace.html" width="780" height="300">
+
+</iframe>
+
+<iframe src="./html/bysex.html" width="780" height="300">
+
+</iframe>
+
+<iframe src="./html/byage.html" width="780" height="300">
+
+</iframe>

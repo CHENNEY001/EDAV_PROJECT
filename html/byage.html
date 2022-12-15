@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+		<meta charset="utf-8">
+		<title>Fully Vaccinated Trend by Age</title>
+		<script src="https://d3js.org/d3.v7.js">
+</script>
+    
+	</head>
+		<h2>Fully Vaccinated Trend by Age</h2>
+  
+	<body>
+    <input type="radio" name="bar" value = '2101'> 2021-01
+    <input type="radio" name="bar" value = '2104'> 2021-04
+		<input type="radio" name="bar" value = '2107'> 2021-07
+		<input type="radio" name="bar" value = '2110'> 2021-10
+  	<input type="radio" name="bar" value='2201'> 2022-01
+		<input type="radio" name="bar" value='2204'> 2022-04
+  	<input type="radio" name="bar" value='2207'> 2022-07
+		<input type="radio" name="bar" value='2210'> 2022-10
+    
+		<script>
+      
+		const w = 800;
+  	const h = 600;
+  	const margin = {top: 50, right: 50, 
+                    bottom: 50, left: 50};
+  	const innerWidth = w - margin.left - margin.right;
+  	const innerHeight = h - margin.top - margin.bottom;
+    
+      
+    const bardata1 = [
+      {age: "0-4", value: 0.0},
+      {age: "5-12", value: 0.01},
+      {age: "13-17", value: 0.88},
+      {age: "18-24", value: 14.43},
+      {age: "25-34", value: 23.25},
+      {age: "35-44", value: 28.94},
+      {age: "45-54", value: 34.54},
+      {age: "55-64", value: 45.95},
+      {age: "65-74", value: 61.55},
+      {age: "75+", value: 53.75}];
+    const bardata1_1 = [0.0, 0.01, 0.88, 14.43, 23.25, 28.94, 34.54, 45.95, 61.55, 53.75];
+    const bardata2 = [0.01, 3.24, 37.51, 53.55, 57.32, 66.53, 71.0, 76.78, 79.87, 67.35];
+    const bardata3 = [0.01, 7.83, 67.66, 74.11, 71.86, 82.09, 83.91, 86.59, 85.83, 71.44];
+    const bardata4 = [0.01, 34.0, 76.36, 83.7, 79.83, 89.96, 89.89, 91.26, 88.92, 73.58];
+    const bardata5 = [0.01, 46.51, 80.22, 87.95, 82.75, 92.54, 91.84, 92.79, 90.03, 74.49];
+    const bardata6 = [0.11, 48.62, 81.51, 89.16, 83.48, 93.15, 92.38, 93.33, 90.65,75.09];
+    const bardata7 = [3.63, 50.09, 82.35, 90.19, 83.94, 93.5, 92.63, 93.55, 90.83, 75.27];
+    const bardata8 = [0.00,0.00,0.00,0.21,1.32,1.02,0.95,1.08,0.81,1.06];
+
+    
+    const xScale = d3.scaleLinear()
+      .domain([0, 100])
+      .range([0,innerWidth])
+  	const yScale = d3.scaleBand()
+      .domain(bardata1.map(d => d.age))
+      .range([0, innerHeight])
+      .paddingInner(.1);
+	  
+    const xAxis = d3.axisBottom()
+      .scale(xScale);
+  	const yAxis = d3.axisLeft()
+      .scale(yScale);
+      
+      
+    // add svg
+		const svg = d3.select("body")
+		  .append("svg")
+		  .attr("width", w)
+		  .attr("height", h);
+    
+    
+		// add background rectangle
+		svg.append("rect")
+      .attr("x", 0)
+      .attr("y", 0)
+      .attr("width", w)
+      .attr("height", h)
+      .attr("fill", "aliceblue");
+	
+    // add bars as a group
+  	const bars = svg.append("g")
+      .attr("id", "plot")
+      .attr("transform", `translate 		
+      (${margin.left}, ${margin.top})`)
+    .selectAll("rect")
+      .data(bardata1);
+      
+    bars.enter().append("rect")
+      .attr("x", 0)
+      .attr("y", d => yScale(d.age)+10)
+      .attr("width", d => xScale(d.value))
+      .attr("height", yScale.bandwidth()-20)
+      .attr("fill", "cornflowerblue");
+    
+      
+    // add axes
+  	svg.append("g")
+      .attr("class", "xAxis")
+      .attr("transform", `translate (${margin.left}, ${h - margin.bottom})`)
+      .call(xAxis);
+
+  	svg.append("g")
+      .attr("class", "yAxis")
+      .attr("transform", `translate (${margin.left}, ${margin.top})`)
+      .call(yAxis);
+      
+      
+    // add number to bars 
+    svg.append('g')
+      	.attr("id", "num")
+      .selectAll("text")
+      .data(bardata1)
+      .enter()
+      .append("text")
+      .attr("x", d => xScale(d.value)+75)
+      .attr("y", d => yScale(d.age)+80)
+      .text(d => d.value)
+      .attr("fill", "navy")
+      .attr("text-anchor", "middle");
+    
+      
+    // add interactivity by radio  
+    d3.selectAll("input")
+  		.on("click", function (event) {
+      var button = event.currentTarget.value;
+      if (button == "2104") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata1_1)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata1_1)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+        
+      }
+      
+      if (button == "2107") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata2)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata2)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+        
+      }
+      
+      if (button == "2110") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata3)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata3)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+      }
+      
+      if (button == "2201") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata4)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata4)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+      }
+      
+      if (button == "2204") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata5)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata5)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+      }
+      
+      if (button == "2207") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata6)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata6)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+      }
+      
+      if (button == "2210") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata7)
+      		.attr("width", d => xScale(d));
+        d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata7)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+      }
+      if (button == "2101") {
+        d3.select("g")
+          .selectAll("rect")
+      		.data(bardata8)
+      		.attr("width", d => xScale(d));
+      	d3.select('g#num')
+        	.selectAll('text')
+        	.data(bardata8)
+        	.text(d => d)
+        	.attr("x", d => xScale(d)+75);
+      }
+      
+    });
+
+
+		</script>
+	</body>
+</html>
