@@ -418,8 +418,9 @@ r2_booster
 ```
 
 ### race trend
-ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis.
-The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated.
+
+ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis. The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated。
+
 ```{r echo=FALSE}
 trend_race <- read.csv("./data/trends-byrace.csv", sep = ',', header = T)
 df3_race <- data_frame(trend_race)
@@ -526,12 +527,11 @@ tm_shape(nyc_vac) +
 
 ```
 
-Then we continue our spatial analysis by checking whether ages also play a role of influencing people's attitude towards vaccines. The spatial patterns of fully vaccinated children and adults are already shown in the NYC COVID-19 Data website. We can see that the patterns for children and adults are similar to the results of all age group: south of Manhattan and Queens have higher percentage. 
+Then we continue our spatial analysis by checking whether ages also play a role of influencing people's attitude towards vaccines. The spatial patterns of fully vaccinated children and adults are already shown in the NYC COVID-19 Data website. We can see that the patterns for children and adults are similar to the results of all age group: south of Manhattan and Queens have higher percentage.
 
 Now we would like to further focus on elder citizens who are older than 65 years old. According to CDC, the risk of sickness increases with age and getting vaccinated will help reduce the probability of severe sickness. [[1]](https://www.cdc.gov/coronavirus/2019-ncov/your-health/treatments-for-severe-illness.html)
 
 With this fact, we want to investigate if older citizens are more willing to get fully vaccinated. We compared the graph to the graph of all age groups above. We found except Staten Island, ratio of older people who completed primary series by Oct 10 2022 in every NYC boroughs are actually lower than the ratio of all age groups.
-
 
 ```{r borough older, echo = FALSE}
 df_older <- df_borough[26:29, -c(1:4)]
@@ -559,6 +559,39 @@ tm_shape(nyc_vac) +
 ```
 
 Next, we visualized the trend of percentage by boroughs. Since the dataset starts from the end of 2020 and ends in Oct 20, 2022. We chose one day's data as reference every 3 month. We could see at the start of 2021, the fully vaccinated percentage in every borough is very low. In April 2021, the percentages grew slightly and every borough are almost at the same pace. In the second half of 2021, the percentages increased rapidly and the patterns for boroughs diverged. In 2022, probably because people who are willing to get vaccines are already finished in 2021, the graphs are almost invariable over months.
+
+```{r borough by time, echo = FALSE}
+df_trend <- read.csv('./data/trends-byboro.csv')
+df_trend1 <- df_trend[c("DATE", "CITY_PERC_FULLY",
+            "SI_PERC_FULLY","BX_PERC_FULLY","MH_PERC_FULLY",
+            "BK_PERC_FULLY", "QS_PERC_FULLY") ]
+df_trend_quarter <- df_trend1[df_trend1$DATE%in% 
+                              c("1/20/2021","4/20/2021",
+                                "7/20/2021","10/20/2021",
+                                "1/20/2022","4/20/2022",
+                                "7/20/2022","10/20/2022"), -2]
+
+colnames(df_trend_quarter) = c(
+  "DATE","Staten Island", "Bronx", "Manhattan","Brooklyn","Queens")
+df_trend_clean = df_trend_quarter %>%
+  gather(key='Borough',value='percent', 
+  `Staten Island`, Bronx, Manhattan, Brooklyn, Queens)
+
+df_trend_clean$geometry = rep(NA, nrow(df_trend_clean))
+df_trend_clean$geometry[df_trend_clean$Borough=="Staten Island"] = nyc_vac$geometry[1]
+df_trend_clean$geometry[df_trend_clean$Borough=="Bronx"] = nyc_vac$geometry[2]
+df_trend_clean$geometry[df_trend_clean$Borough=="Manhattan"] = nyc_vac$geometry[3]
+df_trend_clean$geometry[df_trend_clean$Borough=="Brooklyn"] = nyc_vac$geometry[4]
+df_trend_clean$geometry[df_trend_clean$Borough=="Queens"] = nyc_vac$geometry[5]
+df_trend_clean1 <- st_as_sf(df_trend_clean)
+
+tm_shape(df_trend_clean1) + 
+  tm_polygons('percent', palette = "Blues",
+              style="fixed", 
+              breaks=c(0,10,20,30,40,50,60,70,80,90)) +
+  tm_facets(by='DATE')
+
+```
 
 Last, we can study the factor of race for our spatial analysis. The first graph is derived with all race for later comparison. The fully vaccinated rate for Asian and NHPI is higher than the overall level in all boroughs. Only Bronx has slightly lower percentage. For Hispanic/Latino, the rates are nearly the same as the overall level. For Black and White people, the rates are all lower than the overall level. White people has a relatively high rate of vaccinated in Manhattan, but very low in Brooklyn, whereas the lowest vaccinated rate appears in Queens for black people. This is worthy noticed, since all other race, including the overall level, have their highest percentage of fully vaccinated citizens in Queens.
 
