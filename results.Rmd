@@ -419,7 +419,7 @@ r2_booster
 
 ### race trend
 ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis.
-The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated。
+The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated.
 ```{r echo=FALSE}
 trend_race <- read.csv("./data/trends-byrace.csv", sep = ',', header = T)
 df3_race <- data_frame(trend_race)
