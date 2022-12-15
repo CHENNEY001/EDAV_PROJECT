@@ -1,1 +1,41 @@
 # Results
+
+## Residents Vaccinated
+
+In this part, we want to explore whether there is a relationship between vaccinated people's residency, age and race. The data we use is loaded from `by-residency-demo.csv`.
+
+The following mosaic chart show the residency and age of NYC residents who are vaccinated for COVID-19. We can the proportion of children who were vaccinated was higher among New Yorkers than among non-New Yorkers and the proportion of adult who were vaccinated was lower among New Yorkers than among non-New Yorkers.
+
+```{r echo=FALSE}
+library(vcd)
+library(grid)
+
+residency_vacc <- read.csv("./data/by-residency-demo.csv", sep = ',', header = T)
+residency_vacc[residency_vacc=='Unknown'] <- NA #Unknown
+residency_vacc[residency_vacc=='UNKNOWN'] <- NA #UNKNOWN
+residency_vacc[residency_vacc=='Other'] <- NA #Other
+residency_vacc[residency_vacc=='All ages'] <- NA #Other
+residency_vacc[residency_vacc=='Native American/Alaska Native'] <- NA
+residency_vacc[residency_vacc=='Native Hawaiian/Pacific Islander'] <- NA	
+residency_vacc[residency_vacc=='Multiracial'] <- NA
+residency_vacc=na.omit(residency_vacc)
+df <- data.frame(residency_vacc[,-1])
+df[4]=as.numeric(unlist(df[4]))
+
+table1<-xtabs(COUNT_1PLUS_CUMULATIVE ~RESIDENCY+AGE_GROUP, df)
+p1 <- mosaic( ~RESIDENCY+AGE_GROUP, table1, shade=TRUE, legend=TRUE, color=TRUE, gp_varnames = gpar(fontsize = 12, fontface = 1), gp_labels = gpar(fontsize = 7))
+```
+
+The following mosaic chart show the residency and age of NYC residents who are vaccinated for COVID-19. We can conclude that among black populations, middle-aged adults are less likely to be vaccinated than children and the elderly; whereas in the Asian and Latinos group, compared with children and the elderly, the willingness to vaccinate is stronger among the middle-aged。
+
+```{r echo=FALSE}
+table2<-xtabs(COUNT_1PLUS_CUMULATIVE ~AGE_GROUP+RACE_ETHNICITY, df)
+p2 <- mosaic( ~AGE_GROUP+RACE_ETHNICITY, table2, shade=TRUE, legend=TRUE, color=TRUE, gp_varnames = gpar(fontsize = 12, fontface = 1), gp_labels = gpar(fontsize = 7))
+```
+
+The following mosaic chart show the residency and age of NYC residents who are vaccinated for COVID-19. We can see that Asians, blacks and Latinos living in New York are more open to vaccinations than those who are non-residents
+
+```{r echo=FALSE}
+table3<-xtabs(COUNT_1PLUS_CUMULATIVE ~RESIDENCY+RACE_ETHNICITY, df)
+p3 <- mosaic( ~RESIDENCY+RACE_ETHNICITY, table3, shade=TRUE, legend=TRUE, color=TRUE, gp_varnames = gpar(fontsize = 12, fontface = 1), gp_labels = gpar(fontsize = 7))
+```
