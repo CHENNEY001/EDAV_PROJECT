@@ -11,3 +11,5 @@ missing-value-analysis
 results
 interactive-component
 conclusion
+residents-vaccinated
+people-vaccinated-and-doses-administered
