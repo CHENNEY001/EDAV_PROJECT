@@ -1,0 +1,109 @@
+DATE,RESIDENCY,AGE_GROUP,RACE_ETHNICITY,COUNT_1PLUS_CUMULATIVE
+10/20/22,NON-NYC,All ages,Asian,161636
+10/20/22,NON-NYC,All ages,Black,115704
+10/20/22,NON-NYC,All ages,Hispanic/Latino,179054
+10/20/22,NON-NYC,All ages,Native American/Alaska Native,3680
+10/20/22,NON-NYC,All ages,Other,73135
+10/20/22,NON-NYC,All ages,Native Hawaiian/Pacific Islander,1888
+10/20/22,NON-NYC,All ages,Multiracial,1393
+10/20/22,NON-NYC,All ages,Unknown,79609
+10/20/22,NON-NYC,All ages,White,577071
+10/20/22,NON-NYC,0-17,Asian,14290
+10/20/22,NON-NYC,0-17,Black,7532
+10/20/22,NON-NYC,0-17,Hispanic/Latino,15452
+10/20/22,NON-NYC,0-17,Native American/Alaska Native,193
+10/20/22,NON-NYC,0-17,Other,3869
+10/20/22,NON-NYC,0-17,Native Hawaiian/Pacific Islander,110
+10/20/22,NON-NYC,0-17,Multiracial,210
+10/20/22,NON-NYC,0-17,Unknown,3309
+10/20/22,NON-NYC,0-17,White,22789
+10/20/22,NON-NYC,18-64,Asian,127434
+10/20/22,NON-NYC,18-64,Black,93000
+10/20/22,NON-NYC,18-64,Hispanic/Latino,146422
+10/20/22,NON-NYC,18-64,Native American/Alaska Native,2622
+10/20/22,NON-NYC,18-64,Other,58817
+10/20/22,NON-NYC,18-64,Native Hawaiian/Pacific Islander,1521
+10/20/22,NON-NYC,18-64,Multiracial,1066
+10/20/22,NON-NYC,18-64,Unknown,68190
+10/20/22,NON-NYC,18-64,White,410840
+10/20/22,NON-NYC,65+,Asian,19912
+10/20/22,NON-NYC,65+,Black,15172
+10/20/22,NON-NYC,65+,Hispanic/Latino,17180
+10/20/22,NON-NYC,65+,Native American/Alaska Native,865
+10/20/22,NON-NYC,65+,Other,10449
+10/20/22,NON-NYC,65+,Native Hawaiian/Pacific Islander,257
+10/20/22,NON-NYC,65+,Multiracial,117
+10/20/22,NON-NYC,65+,Unknown,8110
+10/20/22,NON-NYC,65+,White,143442
+10/20/22,NYC,All ages,Asian,1327703
+10/20/22,NYC,All ages,Black,1235971
+10/20/22,NYC,All ages,Hispanic/Latino,2056487
+10/20/22,NYC,All ages,Native American/Alaska Native,24512
+10/20/22,NYC,All ages,Other,428158
+10/20/22,NYC,All ages,Native Hawaiian/Pacific Islander,12426
+10/20/22,NYC,All ages,Multiracial,10914
+10/20/22,NYC,All ages,Unknown,455241
+10/20/22,NYC,All ages,White,1874928
+10/20/22,NYC,0-17,Asian,182078
+10/20/22,NYC,0-17,Black,151543
+10/20/22,NYC,0-17,Hispanic/Latino,304969
+10/20/22,NYC,0-17,Native American/Alaska Native,2911
+10/20/22,NYC,0-17,Other,31593
+10/20/22,NYC,0-17,Native Hawaiian/Pacific Islander,1250
+10/20/22,NYC,0-17,Multiracial,3671
+10/20/22,NYC,0-17,Unknown,35652
+10/20/22,NYC,0-17,White,160585
+10/20/22,NYC,18-64,Asian,963234
+10/20/22,NYC,18-64,Black,877558
+10/20/22,NYC,18-64,Hispanic/Latino,1514069
+10/20/22,NYC,18-64,Native American/Alaska Native,17579
+10/20/22,NYC,18-64,Other,337632
+10/20/22,NYC,18-64,Native Hawaiian/Pacific Islander,9511
+10/20/22,NYC,18-64,Multiracial,6402
+10/20/22,NYC,18-64,Unknown,356828
+10/20/22,NYC,18-64,White,1319755
+10/20/22,NYC,65+,Asian,182391
+10/20/22,NYC,65+,Black,206870
+10/20/22,NYC,65+,Hispanic/Latino,237449
+10/20/22,NYC,65+,Native American/Alaska Native,4022
+10/20/22,NYC,65+,Other,58933
+10/20/22,NYC,65+,Native Hawaiian/Pacific Islander,1665
+10/20/22,NYC,65+,Multiracial,841
+10/20/22,NYC,65+,Unknown,62761
+10/20/22,NYC,65+,White,394588
+10/20/22,UNKNOWN,All ages,Asian,2151
+10/20/22,UNKNOWN,All ages,Black,1975
+10/20/22,UNKNOWN,All ages,Hispanic/Latino,2188
+10/20/22,UNKNOWN,All ages,Native American/Alaska Native,46
+10/20/22,UNKNOWN,All ages,Other,1875
+10/20/22,UNKNOWN,All ages,Native Hawaiian/Pacific Islander,22
+10/20/22,UNKNOWN,All ages,Multiracial,35
+10/20/22,UNKNOWN,All ages,Unknown,4623
+10/20/22,UNKNOWN,All ages,White,4941
+10/20/22,UNKNOWN,0-17,Asian,37
+10/20/22,UNKNOWN,0-17,Black,29
+10/20/22,UNKNOWN,0-17,Hispanic/Latino,73
+10/20/22,UNKNOWN,0-17,Native American/Alaska Native,--
+10/20/22,UNKNOWN,0-17,Other,43
+10/20/22,UNKNOWN,0-17,Native Hawaiian/Pacific Islander,--
+10/20/22,UNKNOWN,0-17,Multiracial,--
+10/20/22,UNKNOWN,0-17,Unknown,160
+10/20/22,UNKNOWN,0-17,White,33
+10/20/22,UNKNOWN,18-64,Asian,1659
+10/20/22,UNKNOWN,18-64,Black,1680
+10/20/22,UNKNOWN,18-64,Hispanic/Latino,1737
+10/20/22,UNKNOWN,18-64,Native American/Alaska Native,39
+10/20/22,UNKNOWN,18-64,Other,1345
+10/20/22,UNKNOWN,18-64,Native Hawaiian/Pacific Islander,19
+10/20/22,UNKNOWN,18-64,Multiracial,29
+10/20/22,UNKNOWN,18-64,Unknown,3993
+10/20/22,UNKNOWN,18-64,White,3372
+10/20/22,UNKNOWN,65+,Asian,455
+10/20/22,UNKNOWN,65+,Black,266
+10/20/22,UNKNOWN,65+,Hispanic/Latino,378
+10/20/22,UNKNOWN,65+,Native American/Alaska Native,--
+10/20/22,UNKNOWN,65+,Other,487
+10/20/22,UNKNOWN,65+,Native Hawaiian/Pacific Islander,--
+10/20/22,UNKNOWN,65+,Multiracial,--
+10/20/22,UNKNOWN,65+,Unknown,470
+10/20/22,UNKNOWN,65+,White,1536
