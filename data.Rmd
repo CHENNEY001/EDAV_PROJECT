@@ -24,7 +24,7 @@ Our data have several levels for both doses (dependent variables) and people (in
 
 File `by-residency-demo.csv`
 
-1.  the residency column has 'unknown' missing data; the race column has 'other' and 'unknown' missing data. We change 'unknown' and 'other' to NA, and delete all NA.
+1.  The residency column has 'unknown' missing data; the race column has 'other' and 'unknown' missing data. We change 'unknown' and 'other' to NA, and delete all NA.
 
 2.  We noticed that the number of 'Native American/Alaska Native', 'Native Hawaiian/Pacific Islander', and 'Multiracial' is very small compared to other races, so we merged them into 'other' class.
 
@@ -45,8 +45,8 @@ df_data[4]=as.numeric(unlist(df_data[4]))
 
 File `trends-byage.csv`
 
-1.  we change the date format from `str` type to `Date` type (month-date-year) for easier sort.
-2.  we changed all columns containing numbers to numeric type.
+1.  We change the date format from `str` type to `Date` type (month-date-year) for easier sort.
+2.  We changed all columns containing numbers to numeric type.
 
 ```{r echo=FALSE}
 trend_age_data <- read.csv("./data/trends-byage.csv", sep = ',', header = T)
