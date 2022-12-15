@@ -99,6 +99,7 @@
 <li class="chapter" data-level="4.3.3" data-path="results.html"><a href="results.html#boro-trend"><i class="fa fa-check"></i><b>4.3.3</b> boro trend</a></li>
 <li class="chapter" data-level="4.3.4" data-path="results.html"><a href="results.html#race-trend"><i class="fa fa-check"></i><b>4.3.4</b> race trend</a></li>
 </ul></li>
+<li class="chapter" data-level="4.4" data-path="results.html"><a href="results.html#by-borough"><i class="fa fa-check"></i><b>4.4</b> By Borough</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>5</b> Interactive component</a></li>
 <li class="chapter" data-level="6" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
@@ -172,8 +173,21 @@
 <p>ANIN is American Indian and Alaska Native Resources, its population is small, so it did not appear in the previous analysis.
 The vaccination trend chart of different boroughs groups shows that ANIN and Asians had a higher proportion of the first stage vaccinations, while whites and blacks had a lower proportion. For booster vaccination, Latinos and blacks are less likely to be vaccinated。
 <img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-12-2.png" width="672" /><img src="finalproj_files/figure-html/unnamed-chunk-12-3.png" width="672" /></p>
-
 </div>
+</div>
+<div id="by-borough" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> By Borough<a href="results.html#by-borough" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this section, we would like to investigate the pattern of fully vaccinated ratio spatially, namely by boroughs of NYC.</p>
+<p>We first plot the percentage of fully vaccinated citizens in every borough of NYC. We could see the fully vaccinated ratio in Queens and Manhattan are very high, which are around 85%. The other three boroughs show relatively low percentage of citizens who completed primary COVID-19 vaccines by Oct 20, 2022, which are around 75%. There is still a 10% difference among boroughs in NYC. This might reveal that attitude towards COVID-19 vaccines for people from different boroughs in NYC are not completely consistent.</p>
+<p><img src="finalproj_files/figure-html/borough-1.png" width="672" /></p>
+<p>Then we continue our spatial analysis by checking whether ages also play a role of influencing people’s attitude towards vaccines. The spatial patterns of fully vaccinated children and adults are already shown in the NYC COVID-19 Data website. We can see that the patterns for children and adults are similar to the results of all age group: south of Manhattan and Queens have higher percentage.</p>
+<p>Now we would like to further focus on elder citizens who are older than 65 years old. According to CDC, the risk of sickness increases with age and getting vaccinated will help reduce the probability of severe sickness. <a href="https://www.cdc.gov/coronavirus/2019-ncov/your-health/treatments-for-severe-illness.html">[1]</a></p>
+<p>With this fact, we want to investigate if older citizens are more willing to get fully vaccinated. We compared the graph to the graph of all age groups above. We found except Staten Island, ratio of older people who completed primary series by Oct 10 2022 in every NYC boroughs are actually lower than the ratio of all age groups.</p>
+<p><img src="finalproj_files/figure-html/borough%20older-1.png" width="672" /></p>
+<p>Next, we visualized the trend of percentage by boroughs. Since the dataset starts from the end of 2020 and ends in Oct 20, 2022. We chose one day’s data as reference every 3 month. We could see at the start of 2021, the fully vaccinated percentage in every borough is very low. In April 2021, the percentages grew slightly and every borough are almost at the same pace. In the second half of 2021, the percentages increased rapidly and the patterns for boroughs diverged. In 2022, probably because people who are willing to get vaccines are already finished in 2021, the graphs are almost invariable over months.</p>
+<p>Last, we can study the factor of race for our spatial analysis. The first graph is derived with all race for later comparison. The fully vaccinated rate for Asian and NHPI is higher than the overall level in all boroughs. Only Bronx has slightly lower percentage. For Hispanic/Latino, the rates are nearly the same as the overall level. For Black and White people, the rates are all lower than the overall level. White people has a relatively high rate of vaccinated in Manhattan, but very low in Brooklyn, whereas the lowest vaccinated rate appears in Queens for black people. This is worthy noticed, since all other race, including the overall level, have their highest percentage of fully vaccinated citizens in Queens.</p>
+<p><img src="finalproj_files/figure-html/borough%20by%20race-1.png" width="672" /></p>
+
 </div>
 </div>
             </section>

@@ -19,3 +19,4 @@ daily-trend
 age-trend
 boro-trend
 race-trend
+by-borough
