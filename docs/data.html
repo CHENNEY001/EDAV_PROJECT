@@ -160,6 +160,11 @@
 <li>We change the date format from <code>str</code> type to <code>Date</code> type (month-date-year) for easier sort.</li>
 <li>We changed all columns containing numbers to numeric type.</li>
 </ol>
+<p>File <code>coverage-by-boro-demo-fully.csv</code></p>
+<ol style="list-style-type: decimal">
+<li><p>We found some data in the percentage column exceed 100, which is not valid. We converted data which are larger than 100 to 99 to keep their representation of almost all people in the given group fully vaccinated.</p></li>
+<li><p>When we are trying to get a view of vaccination status of elder citizens spatially, we do not have data over all races. The original data set only contains the counts and percentages of fully vaccinated elder citizens for every race separately. We divided the count by percentage to get the population of elder citizens for every race and took sum to derive the elder population of all races in each borough. Then, we divided the sum of counts in a given borough by population and times 100 to compute the percentage of fully vaccinated elder citizens in every borough of NYC.</p></li>
+</ol>
 </div>
 <div id="missing-value-analysis" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Missing value analysis<a href="data.html#missing-value-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
